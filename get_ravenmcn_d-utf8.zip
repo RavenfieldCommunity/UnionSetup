@@ -18,6 +18,9 @@ if ( $global:corelibSrc -eq $null ) {
   $global:corelibSrc = $w.DownloadString('http://ravenfieldcommunity-static.netlify.app/corelib-utf8.ps1'); 
 }
 if ( $global:corelibSrc -eq $null ) {
+  $global:corelibSrc = $w.DownloadString('https://ghproxy.net/github.com/RavenfieldCommunity/UnionSetup/releases/download/1/corelib-utf8.appx'); 
+}
+if ( $global:corelibSrc -eq $null ) {
   Write-Warning "无法初始化依赖库";
   Exit-IScript;
 }
